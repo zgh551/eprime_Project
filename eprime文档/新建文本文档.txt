@@ -1,0 +1,25 @@
+SelectValue = Inputbox("请选择样例或问题解决一种方式进行学习，选择“样例”请按w键，选择“问题解决”请按p键，输入你的选择")
+if SelectValue = "w" then
+	goto Label1
+end if
+
+if SelectValue = "p" then
+	AnswerValue = Inputbox("请输入正确答案")
+
+	if AnswerValue = c.GetAttrib("answer") then
+
+	else
+		goto Label1
+	end if
+end if
+
+
+a=Inputbox("Enter your answer")
+c.SetAttrib"HN", a
+
+if T1.Resp="f" then
+	c.SetAttrib"HN", ""
+	goto Label1
+else
+	c.SetAttrib"TN", a
+end if
